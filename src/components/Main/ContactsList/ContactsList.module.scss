@@ -1,0 +1,38 @@
+.contactsBox {
+  width: 400px;
+  margin: 0 auto;
+  align-items: start;
+}
+
+ul {
+  padding: 0 0 0 20px;
+}
+
+.listItem {
+  font-size: 20px;
+  margin-bottom: 5px;
+  display: flex;
+  align-items: center;
+}
+
+.btn {
+  display: block;
+  text-align: center;
+  padding: 5px;
+  height: 35px;
+  border-radius: 10px;
+  background-color: rgb(255, 87, 87);
+  font-size: 18px;
+  font-weight: 600;
+  outline: none;
+  transition: all 200ms linear;
+  margin-left: auto;
+  color: #454545;
+
+  &:hover,
+  &:focus {
+    background-color: rgb(253, 40, 40);
+    box-shadow: 4px 4px 21px 6px rgba(34, 60, 80, 0.2);
+    color: white;
+  }
+}
