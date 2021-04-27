@@ -1,11 +1,11 @@
 import styles from '../HeaderBar.module.scss';
-import { connect } from 'react-redux';
 import AuthMenu from '../AuthMenu/AuthMenu';
 import MainNav from '../MainNav/MainNav';
 import UserMenu from '../UserMenu/UserMenu';
-import { isAuth } from '../../../redux/auth/authSelectors';
+import { useSelector } from 'react-redux';
 
-const HeaderBar = ({ isAuth }) => {
+const HeaderBar = () => {
+  const isAuth = useSelector(state => state.auth.token);
   return (
     <header className={styles.header}>
       <MainNav />
@@ -14,8 +14,4 @@ const HeaderBar = ({ isAuth }) => {
   );
 };
 
-const mapStateToProps = state => ({
-  isAuth: isAuth(state),
-});
-
-export default connect(mapStateToProps)(HeaderBar);
+export default HeaderBar;
