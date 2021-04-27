@@ -25,7 +25,7 @@ class LogInPage extends Component {
         <div>
           <form onSubmit={this.onHandleSubmit} autoComplete="off">
             <label>
-              <p>Email deputat@mail.com</p>
+              <p>Email deputat@mail.com john@gmail.com</p>
               <input
                 type="email"
                 name="email"
@@ -35,7 +35,7 @@ class LogInPage extends Component {
               />
             </label>
             <label>
-              <p>Password deputat</p>
+              <p>Password deputat johnjohn</p>
               <input
                 type="text"
                 name="password"

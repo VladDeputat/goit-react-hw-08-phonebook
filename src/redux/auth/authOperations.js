@@ -50,9 +50,12 @@ const logIn = data => async dispatch => {
 
 const logOut = () => async dispatch => {
   dispatch(logoutRequest());
+
   try {
     await axios.post('/users/logout');
+
     token.unset();
+
     dispatch(logoutSuccess());
   } catch (error) {
     dispatch(logoutError(error.message));
@@ -63,7 +66,6 @@ const getCurrentUser = () => async (dispatch, getState) => {
   const {
     auth: { token: persistedToken },
   } = getState();
-
   if (!persistedToken) {
     return;
   }
@@ -74,9 +76,7 @@ const getCurrentUser = () => async (dispatch, getState) => {
 
   try {
     const response = await axios.get('/users/current');
-    token.set(response.data.token);
     dispatch(getCurrentUserSuccess(response.data));
-    dispatch();
   } catch (error) {
     dispatch(getCurrentUserError(error.message));
   }

@@ -1,5 +1,6 @@
 import { createReducer } from '@reduxjs/toolkit';
 import { combineReducers } from 'redux';
+import { logoutSuccess } from '../auth/authActions';
 import {
   getContactSuccess,
   addContactSuccess,
@@ -12,10 +13,12 @@ const contactsItems = createReducer([], {
   [addContactSuccess]: (state, action) => [...state, action.payload],
   [deleteContactSuccess]: (state, action) =>
     state.filter(item => item.id !== action.payload),
+  [logoutSuccess]: () => [],
 });
 
 const filterContact = createReducer('', {
   [filterContacts]: (_, { payload }) => payload,
+  [logoutSuccess]: () => '',
 });
 
 const contactsReducer = combineReducers({
