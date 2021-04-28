@@ -5,7 +5,6 @@ import FilterContacts from '../components/Main/FilterContacts/FilterContacts';
 const ContactsPage = () => {
   return (
     <div>
-      <h1>ContactsPage</h1>
       <Form />
       <FilterContacts />
       <ContactsList />

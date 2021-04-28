@@ -1,6 +1,6 @@
 import React, { Component, Suspense, lazy } from 'react';
 import HeaderBar from './Header/HeaderBar/HeaderBar';
-import { Route, Switch } from 'react-router';
+import { Switch } from 'react-router';
 import { connect } from 'react-redux';
 import { getCurrentUser } from '../redux/auth/authOperations';
 import PrivateRoute from './routes/PrivateRoute';

@@ -1,6 +1,6 @@
 import { useSelector } from 'react-redux';
 import { NavLink } from 'react-router-dom';
-import styles from '../HeaderBar.module.scss';
+import styles from './MainNav.module.scss';
 
 const MainNav = () => {
   const isAuth = useSelector(state => state.auth.token);

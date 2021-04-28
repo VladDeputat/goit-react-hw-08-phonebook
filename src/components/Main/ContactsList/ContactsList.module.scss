@@ -11,8 +11,11 @@ ul {
 .listItem {
   font-size: 20px;
   margin-bottom: 5px;
+  border-radius: 10px;
+  padding-left: 5px;
   display: flex;
   align-items: center;
+  background-color: rgb(247, 183, 183);
 }
 
 .btn {

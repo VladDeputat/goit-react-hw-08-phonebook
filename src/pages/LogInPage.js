@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import styles from '../components/Main/Form/Form.module.scss';
 import { connect } from 'react-redux';
 import { logIn } from '../redux/auth/authOperations';
 
@@ -20,31 +21,35 @@ class LogInPage extends Component {
 
   render() {
     return (
-      <div>
-        <h1>LoginPage</h1>
+      <div className={styles.authFormContainer}>
+        <h1 className={styles.heading}>Please, log in.</h1>
         <div>
           <form onSubmit={this.onHandleSubmit} autoComplete="off">
             <label>
-              <p>Email deputat@mail.com john@gmail.com</p>
+              <p className={styles.subtitle}>Email</p>
               <input
                 type="email"
                 name="email"
                 value={this.state.email}
                 required
                 onChange={this.onHandleChange}
+                className={styles.input}
               />
             </label>
             <label>
-              <p>Password deputat johnjohn</p>
+              <p className={styles.subtitle}>Password</p>
               <input
-                type="text"
+                type="password"
                 name="password"
                 value={this.state.password}
                 required
                 onChange={this.onHandleChange}
+                className={styles.input}
               />
             </label>
-            <button type="submit">Log in</button>
+            <button type="submit" className={styles.btn}>
+              Log in
+            </button>
           </form>
         </div>
       </div>

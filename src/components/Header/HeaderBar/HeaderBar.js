@@ -1,4 +1,4 @@
-import styles from '../HeaderBar.module.scss';
+import styles from './HeaderBar.module.scss';
 import AuthMenu from '../AuthMenu/AuthMenu';
 import MainNav from '../MainNav/MainNav';
 import UserMenu from '../UserMenu/UserMenu';
