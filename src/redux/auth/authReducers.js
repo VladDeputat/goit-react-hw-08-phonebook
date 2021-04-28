@@ -1,12 +1,12 @@
 import { createReducer } from '@reduxjs/toolkit';
 import { combineReducers } from 'redux';
+import error from '../errorReducer';
 import {
   registerSuccess,
   loginSuccess,
   registerError,
   loginError,
   logoutSuccess,
-  logoutError,
   getCurrentUserSuccess,
   getCurrentUserError,
 } from './authActions';
@@ -26,12 +26,12 @@ const token = createReducer(null, {
   [logoutSuccess]: () => null,
 });
 
-const error = createReducer(null, {
-  [registerError]: (_, { payload }) => payload,
-  [loginError]: (_, { payload }) => payload,
-  [logoutError]: (_, { payload }) => payload,
-  [getCurrentUserError]: (_, { payload }) => payload,
-});
+// const error = createReducer(null, {
+//   [registerError]: (_, { payload }) => payload,
+//   [loginError]: (_, { payload }) => payload,
+//   [logoutError]: (_, { payload }) => payload,
+//   [getCurrentUserError]: (_, { payload }) => payload,
+// });
 
 const isAuth = createReducer(false, {
   [registerSuccess]: () => true,

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import styles from '../components/Main/Form/Form.module.scss';
 import { connect } from 'react-redux';
 import { register } from '../redux/auth/authOperations';
+import RegistrationForm from '../components/Main/Form/RegistrationForm';
 
 class RegistrationPage extends Component {
   state = {
@@ -21,52 +21,13 @@ class RegistrationPage extends Component {
   };
   render() {
     return (
-      <div className={styles.authFormContainer}>
-        <h1 className={styles.heading}>Please, register!</h1>
-        <div>
-          <form onSubmit={this.onHandleSubmit} autoComplete="off">
-            <label>
-              <p className={styles.subtitle}>Name</p>
-              <input
-                type="text"
-                name="name"
-                value={this.state.name}
-                pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
-                title="Имя может состоять только из букв, апострофа, тире и пробелов. Например Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan и т. п."
-                required
-                onChange={this.onHandleChange}
-                className={styles.input}
-              />
-            </label>
-            <label>
-              <p className={styles.subtitle}>Email</p>
-              <input
-                type="email"
-                name="email"
-                value={this.state.email}
-                required
-                onChange={this.onHandleChange}
-                className={styles.input}
-              />
-            </label>
-            <label>
-              <p className={styles.subtitle}>Password</p>
-              <input
-                type="password"
-                name="password"
-                value={this.state.password}
-                required
-                onChange={this.onHandleChange}
-                className={styles.input}
-              />
-            </label>
-
-            <button type="submit" className={styles.btn}>
-              Sign up
-            </button>
-          </form>
-        </div>
-      </div>
+      <RegistrationForm
+        name={this.state.name}
+        email={this.state.email}
+        password={this.state.password}
+        onHandleSubmit={this.onHandleSubmit}
+        onHandleChange={this.onHandleChange}
+      />
     );
   }
 }
